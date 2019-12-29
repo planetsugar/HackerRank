@@ -12,3 +12,5 @@ type.
 - Faster-performing solutions are preferred, as time permits;
 - Please annotate key implementation decisions in comments within the sample code.
 - Although the “Features.txt” file is relatively small in this example, the program should perform well in situations where this file may grow to many Gigabytes in size.
+
+script1 and script2 are my javascript solutions. :-)
