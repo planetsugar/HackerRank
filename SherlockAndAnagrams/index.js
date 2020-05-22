@@ -7,35 +7,36 @@ const assert = ((g,message = 'error') => {
 
 const howManyAnagrams = anaString => {
 
-    const anagramIndexAtLevel = (level, str) => {
-        if (str.length === 1) {
-            return [];
+    const anagramIndexAtLevel = (level, anaString) => {
+
+        if (anaString.length === 1) {
+            return 0;
         }
     
-        const levelItems = [];
-        const charsUnsorted = str.slice(0,level); 
-        const charsSorted = charsUnsorted.split('').sort().join('');
-        for(let index in str) {
-            if (index == 0) {
-                continue;
-            }
-            const last = parseInt(index) + level;
-            const unsorted = str.slice(index, last); 
-            const sorted = unsorted.split('').sort().join(''); 
-            if (sorted === charsSorted) { 
-                levelItems.push(`[${charsUnsorted}, ${unsorted}]`);
-            }
-        }    
+        const sortString = str => {
+            return str.split('').sort().join('');
+        }
         
+        let levelItems = 0;
+        const charsUnsorted = anaString.slice(0,level); 
+        const charsSorted = sortString(charsUnsorted);
+
+        for (let index = 1;index<anaString.length;index++) {
+
+            const unsorted = anaString.slice(index, index + level); 
+            const sorted = unsorted.split('').sort().join(''); 
+            levelItems += sorted === charsSorted ? 1 : 0;
+
+        }    
+
         // console.log(`Count: ${levelItems.length} -> ${levelItems}, ${level}`);
     
-        const returned = anagramIndexAtLevel(level, str.substr(1));
-        return levelItems.concat(returned);
+        return levelItems += anagramIndexAtLevel(level, anaString.substr(1));
     }
     
     let count = 0;
     for (let level = 1;level<=anaString.length;level++) {
-        count += (anagramIndexAtLevel(level, anaString)).length;
+        count += (anagramIndexAtLevel(level, anaString));
     }
     
     return count;
