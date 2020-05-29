@@ -1,4 +1,4 @@
-let source = 'aba';
+let source = 'cbcb';
 const dict = {};
 
 while(source) {
