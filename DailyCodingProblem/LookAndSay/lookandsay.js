@@ -1,3 +1,5 @@
+const { assert } = require('../../utils/assert');
+
 const look = (s => {
     const lookResults = [];
     let previousChar = null;
@@ -41,6 +43,9 @@ const lookAndSay = n => {
     return returnValue;
 }
 
-console.log(lookAndSay(5));
-
-//console.log(say(look('1112666666')));
+assert(lookAndSay(0) === '', 'Empty wrong');
+assert(lookAndSay(1) === '1', '1 wrong');
+assert(lookAndSay(2) === '11', '2 wrong');
+assert(lookAndSay(3) === '21', '3 wrong');
+assert(lookAndSay(4) === '1211', '4 wrong');
+assert(lookAndSay(5) === '111221', '5 wrong');
