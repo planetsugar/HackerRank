@@ -15,8 +15,6 @@ const matrix = size => {
     let top = 0;
     let bottom = size - 1;
 
-    //for (let count = 1; count < size + 1; count++) {
-        // Move right for loop 
     let counter = 1;
 
     while (counter<=(size * size)) {
@@ -44,4 +42,4 @@ const matrix = size => {
     return returnMatrix;
 }
 
-console.log(matrix(5));
+console.log(matrix(5));   
