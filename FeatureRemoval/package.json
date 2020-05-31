@@ -1,0 +1,15 @@
+{
+  "name": "feature_removal",
+  "version": "1.0.0",
+  "description": "This technical test was given to me in 2013. It was to be written in C#. My C# solution was terrible. \r =====================================================================================================",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "line-reader": "^0.4.0",
+    "queue": "^6.0.1"
+  }
+}
